@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pacote Aprovação — Procedimento OAB | 1ª Fase</title>
+<meta name="description" content="Todo o material da 1ª fase da OAB em um pacote: apostila, simulados no estilo FGV com gabarito comentado, mapas mentais e as dicas do que mais cai. Acesso imediato.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   PROCEDIMENTO OAB — página de vendas
+   Paleta e fonte conforme o guia de identidade do curso.
+   ========================================================= */
+:root{
+  --navy:#0A2540;
+  --navy-dark:#06182a;
+  --navy-light:#123a5c;
+  --grena:#8B1E1A;
+  --grena-live:#c0392b;
+  --gold:#C5A059;
+  --gold-light:#E2C58A;
+  --paper:#F5F2EC;
+  --ink:#12212f;
+  --muted:rgba(255,255,255,.72);
+  --line:rgba(197,160,89,.28);
+  --maxw:760px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Poppins',-apple-system,'Segoe UI',sans-serif;
+  background:var(--navy-dark);
+  color:#fff;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+/* ---------- blocos ---------- */
+.band{padding:52px 0}
+.band--dark{background:linear-gradient(168deg,var(--navy-light) 0%,var(--navy) 55%,var(--navy-dark) 100%)}
+.band--deep{background:var(--navy-dark)}
+.band--paper{background:var(--paper);color:var(--ink)}
+
+.eyebrow{
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:700;color:var(--gold);margin-bottom:14px;
+  display:flex;align-items:center;gap:9px;
+}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--gold);flex:none}
+.band--paper .eyebrow{color:var(--grena)}
+.band--paper .eyebrow::before{background:var(--grena)}
+
+h1{font-size:clamp(30px,7.4vw,46px);line-height:1.08;font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(23px,5.4vw,33px);line-height:1.14;font-weight:800;letter-spacing:-.015em;margin-bottom:14px}
+.band--paper h2{color:var(--navy)}
+h3{font-size:17px;font-weight:700;line-height:1.25}
+p{font-size:15.5px;font-weight:300;color:var(--muted)}
+.band--paper p{color:#46545f}
+strong{font-weight:700;color:#fff}
+.band--paper strong{color:var(--navy)}
+.gold{color:var(--gold)}
+
+/* ---------- topo ---------- */
+.masthead{
+  border-bottom:1px solid var(--line);
+  padding:14px 0;background:var(--navy-dark);
+}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.brand span{color:var(--gold)}
+.masthead .fase{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500}
+
+/* ---------- contagem ---------- */
+.count{
+  display:inline-flex;align-items:baseline;gap:8px;
+  border:1px solid rgba(192,57,43,.55);
+  background:rgba(139,30,26,.28);
+  padding:8px 15px;margin-bottom:20px;
+}
+.count b{font-size:20px;font-weight:800;color:#fff;line-height:1}
+.count span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#f0b8b4;font-weight:600}
+
+.hero-sub{font-size:16px;margin-top:16px;max-width:52ch}
+
+/* ---------- questão ao vivo (elemento-assinatura) ---------- */
+.quiz{
+  margin-top:30px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.045);
+}
+.quiz__head{
+  padding:12px 18px;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+}
+.quiz__tag{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.quiz__meta{font-size:10.5px;color:rgba(255,255,255,.45);font-weight:400}
+.quiz__body{padding:20px 18px}
+.quiz__q{font-size:15px;font-weight:400;color:rgba(255,255,255,.9);line-height:1.62}
+.quiz__ask{font-size:14.5px;font-weight:600;color:#fff;margin-top:12px}
+
+.alts{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.alt{
+  display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;
+  font-family:inherit;font-size:14.5px;font-weight:300;color:rgba(255,255,255,.88);
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.13);
+  padding:12px 14px;cursor:pointer;line-height:1.45;
+  transition:border-color .18s ease,background .18s ease;
+}
+.alt:hover{border-color:var(--gold);background:rgba(197,160,89,.1)}
+.alt:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.alt__k{font-weight:800;color:var(--gold);flex:none;width:16px}
+.alt[data-state="right"]{border-color:#3f9e6a;background:rgba(63,158,106,.16)}
+.alt[data-state="right"] .alt__k{color:#7fd3a4}
+.alt[data-state="wrong"]{border-color:var(--grena-live);background:rgba(139,30,26,.3)}
+.alt[data-state="wrong"] .alt__k{color:#f0b8b4}
+.alt[disabled]{cursor:default}
+.alt[disabled]:hover{border-color:rgba(255,255,255,.13);background:rgba(255,255,255,.04)}
+.alt[data-state="right"][disabled]:hover{border-color:#3f9e6a;background:rgba(63,158,106,.16)}
+.alt[data-state="wrong"][disabled]:hover{border-color:var(--grena-live);background:rgba(139,30,26,.3)}
+
+.reveal{display:none;margin-top:18px;border-left:3px solid var(--gold);background:rgba(197,160,89,.12);padding:16px 18px}
+.reveal.on{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.reveal__t{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:8px}
+.reveal p{font-size:14.5px;color:rgba(255,255,255,.86);line-height:1.6}
+.reveal p+p{margin-top:10px}
+.reveal .law{font-size:12.5px;color:var(--gold-light);font-weight:500;margin-top:10px}
+
+/* ---------- CTA ---------- */
+.cta{
+  display:block;width:100%;text-align:center;text-decoration:none;
+  background:var(--gold);color:var(--navy-dark);
+  font-weight:800;font-size:17px;letter-spacing:.01em;
+  padding:17px 22px;border:none;font-family:inherit;cursor:pointer;
+  transition:transform .15s ease,background .15s ease;
+}
+.cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+.cta:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.cta small{display:block;font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;opacity:.72;margin-top:3px}
+.cta-note{font-size:12.5px;color:rgba(255,255,255,.55);text-align:center;margin-top:11px;font-weight:300}
+.band--paper .cta-note{color:#6c7883}
+.cta-hold{margin-top:26px}
+
+/* ---------- conteúdo do pacote ---------- */
+.stack{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.item{
+  display:flex;gap:14px;align-items:flex-start;
+  background:#fff;border:1px solid rgba(10,37,64,.1);
+  border-left:3px solid var(--grena);padding:16px 18px;
+}
+.item__n{font-size:11px;font-weight:800;color:var(--grena);letter-spacing:.1em;flex:none;padding-top:3px}
+.item h3{color:var(--navy);margin-bottom:4px}
+.item p{font-size:14px;line-height:1.5}
+
+.materias{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  gap:8px;margin-top:22px;
+}
+.materia{
+  background:#fff;border:1px solid rgba(10,37,64,.1);
+  padding:11px 13px;font-size:13px;font-weight:500;color:var(--navy);
+}
+.materia em{display:block;font-style:normal;font-size:10.5px;font-weight:400;color:#7a8590;margin-top:2px}
+
+/* ---------- ancoragem ---------- */
+.anchor{margin-top:26px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+.arow{display:flex;justify-content:space-between;gap:14px;padding:12px 18px;border-bottom:1px solid rgba(197,160,89,.16);font-size:14.5px;font-weight:300;color:rgba(255,255,255,.82)}
+.arow b{font-weight:600;color:rgba(255,255,255,.95);white-space:nowrap}
+.arow--sum{background:rgba(255,255,255,.05)}
+.arow--sum,.arow--sum b{color:rgba(255,255,255,.6);font-weight:500}
+.arow--sum b{text-decoration:line-through}
+.arow--pack{background:rgba(197,160,89,.18);border-bottom:none;padding:18px}
+.arow--pack span{font-size:16px;font-weight:700;color:#fff}
+.arow--pack b{font-size:28px;font-weight:800;color:var(--gold);line-height:1}
+
+/* ---------- prateleira ---------- */
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:24px}
+.sku{background:#fff;border:1px solid rgba(10,37,64,.1);padding:18px;display:flex;flex-direction:column}
+.sku h3{color:var(--navy);font-size:16px;margin-bottom:6px}
+.sku p{font-size:13.5px;line-height:1.5;flex:1}
+.sku__foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px}
+.sku__price{font-size:18px;font-weight:800;color:var(--grena)}
+.sku__buy{
+  font-size:12.5px;font-weight:700;text-decoration:none;color:var(--navy);
+  border:1.5px solid var(--navy);padding:7px 13px;transition:background .15s ease,color .15s ease;
+}
+.sku__buy:hover{background:var(--navy);color:#fff}
+.sku__buy:focus-visible{outline:2px solid var(--grena);outline-offset:2px}
+
+/* ---------- método / confiança ---------- */
+.pill{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--gold);border:1px solid var(--line);padding:6px 12px;margin-bottom:16px}
+
+.faq{margin-top:22px;border-top:1px solid rgba(10,37,64,.12)}
+.faq details{border-bottom:1px solid rgba(10,37,64,.12)}
+.faq summary{
+  padding:15px 30px 15px 0;font-size:15px;font-weight:600;color:var(--navy);
+  cursor:pointer;list-style:none;position:relative;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:13px;font-size:20px;font-weight:400;color:var(--grena)}
+.faq details[open] summary::after{content:"–"}
+.faq summary:focus-visible{outline:2px solid var(--grena);outline-offset:2px}
+.faq p{padding:0 0 16px;font-size:14.5px;line-height:1.6}
+
+.guarantee{
+  margin-top:24px;border:1px dashed rgba(10,37,64,.28);
+  padding:20px;background:#fff;
+}
+.guarantee h3{color:var(--navy);margin-bottom:6px}
+.guarantee p{font-size:14px}
+
+/* ---------- barra fixa mobile ---------- */
+.sticky{
+  position:fixed;left:0;right:0;bottom:0;z-index:40;
+  background:rgba(6,24,42,.96);border-top:1px solid var(--line);
+  padding:10px 16px;display:flex;align-items:center;gap:12px;
+  transform:translateY(110%);transition:transform .28s ease;
+  backdrop-filter:blur(6px);
+}
+.sticky.on{transform:none}
+.sticky__i{flex:1;min-width:0}
+.sticky__i b{display:block;font-size:14px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sticky__i span{font-size:11px;color:rgba(255,255,255,.55)}
+.sticky .cta{width:auto;flex:none;padding:12px 18px;font-size:14.5px}
+
+footer{padding:34px 0 90px;border-top:1px solid var(--line);background:var(--navy-dark)}
+footer p{font-size:12px;color:rgba(255,255,255,.4);line-height:1.7}
+
+@media (min-width:720px){
+  .band{padding:70px 0}
+  .cta{font-size:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+  html{scroll-behavior:auto}
+  .sticky{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Procedimento <span>OAB</span></div>
+    <div class="fase">1ª Fase · Banca FGV</div>
+  </div>
+</header>
+
+<!-- ============ HERO + QUESTÃO AO VIVO ============ -->
+<section class="band band--dark">
+  <div class="wrap">
+    <div class="count"><b id="dias">—</b><span>dias para a prova</span></div>
+    <h1>Você passaria<br>se a prova fosse <span class="gold">hoje?</span></h1>
+    <p class="hero-sub">Responda a questão abaixo. Ela é do nosso material e cobra exatamente o que a FGV cobra — inclusive a pegadinha.</p>
+
+    <!-- elemento-assinatura: a questão respondível -->
+    <div class="quiz">
+      <div class="quiz__head">
+        <span class="quiz__tag">Ética e Estatuto da OAB</span>
+        <span class="quiz__meta">Questão no estilo FGV</span>
+      </div>
+      <div class="quiz__body">
+        <p class="quiz__q">Determinado vereador integra a mesa diretora da Câmara Municipal.</p>
+        <p class="quiz__ask">Sobre o exercício da advocacia, assinale a afirmativa correta.</p>
+
+        <ul class="alts" id="alts">
+          <li><button class="alt" data-k="A"><span class="alt__k">A</span><span>Pode advogar livremente, pois mandato eletivo não restringe a advocacia.</span></button></li>
+          <li><button class="alt" data-k="B"><span class="alt__k">B</span><span>Está apenas impedido de advogar contra a Fazenda municipal.</span></button></li>
+          <li><button class="alt" data-k="C"><span class="alt__k">C</span><span>Está em situação de incompatibilidade, não podendo advogar.</span></button></li>
+          <li><button class="alt" data-k="D"><span class="alt__k">D</span><span>Pode advogar, exceto em causas criminais.</span></button></li>
+        </ul>
+
+        <div class="reveal" id="reveal">
+          <div class="reveal__t" id="revealTitle">A pegadinha da FGV</div>
+          <p><strong>Gabarito: C.</strong> Quem integra a mesa diretora do Legislativo está em <strong>incompatibilidade</strong> — proibição total de advogar.</p>
+          <p>A alternativa B é a armadilha: ela descreve o <strong>impedimento</strong>, que é proibição parcial e vale para o parlamentar que <em>não</em> integra a mesa. Trocar um pelo outro derruba muita gente que estudou a matéria.</p>
+          <p class="law">Art. 28, I e art. 30 do Estatuto da OAB</p>
+        </div>
+
+        <div class="cta-hold">
+          <a class="cta" href="#CHECKOUT-PACOTE">Quero o pacote completo — R$ 97<small>Acesso imediato</small></a>
+          <p class="cta-note">Todo o material da 1ª fase, nas 11 matérias.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ O PROBLEMA ============ -->
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="eyebrow">O problema desta reta final</div>
+    <h2>Não falta conteúdo.<br>Falta tempo e direção.</h2>
+    <p>A esta altura, ninguém vai ler mil páginas. O que decide a aprovação agora é saber <strong>o que mais cai</strong>, treinar <strong>no formato da banca</strong> e descobrir <strong>onde você ainda erra</strong> — enquanto ainda dá tempo de corrigir.</p>
+    <p style="margin-top:14px">Foi para isso que montamos o pacote: material direto, no padrão FGV, revisado por advogado. Sem videoaula de quatro horas, sem enrolação.</p>
+  </div>
+</section>
+
+<!-- ============ O QUE VEM ============ -->
+<section class="band band--paper" style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow">O que você recebe</div>
+    <h2>Pacote Aprovação — 1ª Fase</h2>
+    <p>Quatro materiais para cada uma das 11 matérias, mais a apostila completa de teoria.</p>
+
+    <div class="stack">
+      <div class="item">
+        <span class="item__n">01</span>
+        <div>
+          <h3>Simulados de 80 questões, no estilo FGV</h3>
+          <p>Questões inéditas escritas no padrão da banca, com <strong>gabarito comentado alternativa por alternativa</strong> — você entende por que errou, não só o que errou.</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item__n">02</span>
+        <div>
+          <h3>Mapas mentais</h3>
+          <p>A matéria inteira organizada em esquema visual. Serve para revisar uma matéria completa em minutos, não em horas.</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item__n">03</span>
+        <div>
+          <h3>As 20 dicas do que mais cai</h3>
+          <p>Por matéria, os pontos de maior incidência no exame — o que a FGV repete todo ano e o que ela usa para derrubar.</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item__n">04</span>
+        <div>
+          <h3>Apostila completa de teoria</h3>
+          <p>A base, para quando você precisa entender de verdade um tema que não entrou na cabeça. Consulta, não leitura obrigatória.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="materias">
+      <div class="materia">Ética e Estatuto <em>a matéria que mais cai</em></div>
+      <div class="materia">Constitucional</div>
+      <div class="materia">Civil</div>
+      <div class="materia">Processo Civil</div>
+      <div class="materia">Penal</div>
+      <div class="materia">Processo Penal</div>
+      <div class="materia">Trabalho</div>
+      <div class="materia">Processo do Trabalho</div>
+      <div class="materia">Administrativo</div>
+      <div class="materia">Tributário</div>
+      <div class="materia">Empresarial</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ANCORAGEM + CTA ============ -->
+<section class="band band--dark">
+  <div class="wrap">
+    <div class="eyebrow">O preço</div>
+    <h2>Comprando separado,<br>sairia bem mais caro.</h2>
+
+    <div class="anchor">
+      <div class="arow"><span>Apostila completa de teoria</span><b>R$ 49,90</b></div>
+      <div class="arow"><span>Simulados de 80 questões, com gabarito comentado</span><b>R$ 19,90</b></div>
+      <div class="arow"><span>Mapas mentais de todas as matérias</span><b>R$ 19,90</b></div>
+      <div class="arow"><span>As 20 dicas do que mais cai</span><b>R$ 19,90</b></div>
+      <div class="arow"><span>Revisão de Véspera</span><b>R$ 27,00</b></div>
+      <div class="arow arow--sum"><span>Somando tudo</span><b>R$ 136,60</b></div>
+      <div class="arow arow--pack"><span>No pacote, você paga</span><b>R$ 97</b></div>
+    </div>
+
+    <div class="cta-hold">
+      <a class="cta" href="#CHECKOUT-PACOTE">Garantir o pacote — R$ 97<small>Pix, cartão ou parcelado</small></a>
+      <p class="cta-note">Liberação automática assim que o pagamento é confirmado.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRATELEIRA ============ -->
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="eyebrow">Prefere levar só uma parte?</div>
+    <h2>Os materiais avulsos</h2>
+    <p>Cada um funciona sozinho. Só vale lembrar: três avulsos já custam mais do que o pacote inteiro.</p>
+
+    <div class="shelf">
+      <div class="sku">
+        <h3>Simulados FGV</h3>
+        <p>80 questões por simulado, no padrão da banca, todas com gabarito comentado.</p>
+        <div class="sku__foot"><span class="sku__price">R$ 19,90</span><a class="sku__buy" href="#CHECKOUT-SIMULADOS">Comprar</a></div>
+      </div>
+      <div class="sku">
+        <h3>Mapas Mentais</h3>
+        <p>Todas as matérias em esquema visual, para revisão rápida.</p>
+        <div class="sku__foot"><span class="sku__price">R$ 19,90</span><a class="sku__buy" href="#CHECKOUT-MAPAS">Comprar</a></div>
+      </div>
+      <div class="sku">
+        <h3>20 Dicas por matéria</h3>
+        <p>O que mais cai no exame, matéria por matéria.</p>
+        <div class="sku__foot"><span class="sku__price">R$ 19,90</span><a class="sku__buy" href="#CHECKOUT-DICAS">Comprar</a></div>
+      </div>
+      <div class="sku">
+        <h3>Apostila Completa</h3>
+        <p>A teoria das 11 matérias da 1ª fase, para consulta.</p>
+        <div class="sku__foot"><span class="sku__price">R$ 49,90</span><a class="sku__buy" href="#CHECKOUT-APOSTILA">Comprar</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MÉTODO / CONFIANÇA ============ -->
+<section class="band band--deep">
+  <div class="wrap">
+    <span class="pill">Como o material é feito</span>
+    <h2>Nenhum aluno pode errar<br>por ter seguido o nosso material.</h2>
+    <p>Esse é o princípio da casa. Cada questão, cada comentário e cada mapa passa por <strong>revisão jurídica antes de ser publicado</strong> — conferindo lei, entendimento atual e como a FGV vem cobrando o tema.</p>
+    <p style="margin-top:14px">É por isso que o material é enxuto: preferimos entregar menos página e mais precisão do que encher volume com conteúdo que a banca não cobra.</p>
+  </div>
+</section>
+
+<!-- ============ GARANTIA + FAQ ============ -->
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="eyebrow">Antes de comprar</div>
+    <h2>Dúvidas rápidas</h2>
+
+    <div class="guarantee">
+      <h3>Garantia de 7 dias</h3>
+      <p>Se abrir o material e achar que não é para você, é só pedir o reembolso em até 7 dias. Devolvemos o valor integral, sem precisar justificar.</p>
+    </div>
+
+    <div class="faq">
+      <details>
+        <summary>Como recebo o material?</summary>
+        <p>Por download, logo após a confirmação do pagamento. No Pix costuma ser em minutos; no cartão, assim que a operadora aprova. O link chega no seu e-mail e fica disponível para baixar quantas vezes precisar.</p>
+      </details>
+      <details>
+        <summary>É PDF ou videoaula?</summary>
+        <p>PDF. A escolha é proposital: nesta altura da preparação, ler e resolver questão rende mais que assistir aula. Você abre no celular, no computador ou imprime.</p>
+      </details>
+      <details>
+        <summary>Serve para quem vai prestar o próximo exame também?</summary>
+        <p>Sim. O material cobre a matéria da 1ª fase, que não muda de um exame para outro. O acesso é seu, sem prazo de expiração.</p>
+      </details>
+      <details>
+        <summary>Já reprovei outras vezes. Isso resolve?</summary>
+        <p>Não existe material que aprove sozinho — quem passa é quem treina. O que a gente faz é encurtar o caminho: te mostrar o que mais cai, no formato da banca, com o comentário que explica o erro. O resto é resolver questão até o padrão da FGV ficar previsível.</p>
+      </details>
+      <details>
+        <summary>Posso parcelar?</summary>
+        <p>Pode. No cartão, o parcelamento aparece na hora do pagamento. Também aceitamos Pix à vista.</p>
+      </details>
+    </div>
+
+    <div class="cta-hold">
+      <a class="cta" href="#CHECKOUT-PACOTE">Começar agora — R$ 97<small>Garantia de 7 dias</small></a>
+      <p class="cta-note">Faltam <b id="dias2">—</b> dias para a prova.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong style="color:var(--gold)">Procedimento OAB</strong> — A aprovação é um procedimento. Siga o método.</p>
+    <p style="margin-top:8px">Material de estudo autoral para a 1ª fase do Exame de Ordem. Não temos vínculo com a OAB nem com a FGV. Nenhum resultado é garantido: a aprovação depende da preparação de cada candidato.</p>
+  </div>
+</footer>
+
+<!-- barra fixa -->
+<div class="sticky" id="sticky">
+  <div class="sticky__i">
+    <b>Pacote Aprovação</b>
+    <span>Todas as 11 matérias · R$ 97</span>
+  </div>
+  <a class="cta" href="#CHECKOUT-PACOTE">Comprar</a>
+</div>
+
+<script>
+/* ---- data da prova: ajuste aqui se mudar ---- */
+var DATA_PROVA = '2026-08-30T13:00:00-03:00';
+
+(function(){
+  var alvo = new Date(DATA_PROVA);
+  var hoje = new Date();
+  var dias = Math.max(0, Math.ceil((alvo - hoje) / 86400000));
+  ['dias','dias2'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el) el.textContent = dias;
+  });
+})();
+
+/* ---- questão respondível ---- */
+(function(){
+  var CERTA = 'C';
+  var alts = document.querySelectorAll('.alt');
+  var reveal = document.getElementById('reveal');
+  var title = document.getElementById('revealTitle');
+  var respondida = false;
+
+  alts.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if (respondida) return;
+      respondida = true;
+      var escolha = btn.getAttribute('data-k');
+
+      alts.forEach(function(b){
+        var k = b.getAttribute('data-k');
+        if (k === CERTA) b.setAttribute('data-state','right');
+        else if (k === escolha) b.setAttribute('data-state','wrong');
+        b.disabled = true;
+      });
+
+      title.textContent = (escolha === CERTA)
+        ? 'Acertou — mas veja a pegadinha'
+        : 'A pegadinha da FGV';
+
+      reveal.classList.add('on');
+    });
+  });
+})();
+
+/* ---- barra fixa aparece após o primeiro scroll ---- */
+(function(){
+  var bar = document.getElementById('sticky');
+  var onScroll = function(){
+    if (window.scrollY > 620) bar.classList.add('on');
+    else bar.classList.remove('on');
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>
