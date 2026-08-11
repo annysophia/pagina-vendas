@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compra confirmada — Procedimento OAB</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A2540;--navy-dark:#06182a;--navy-light:#123a5c;
+  --grena:#8B1E1A;--grena-live:#c0392b;
+  --gold:#C5A059;--gold-light:#E2C58A;--paper:#F5F2EC;--ink:#12212f;
+  --green:#3f9e6a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Poppins',-apple-system,'Segoe UI',sans-serif;
+  background:var(--navy-dark);color:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:660px;margin:0 auto;padding:0 20px}
+
+.masthead{border-bottom:1px solid rgba(197,160,89,.28);padding:14px 0;background:var(--navy-dark)}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.brand span{color:var(--gold)}
+.masthead .fase{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500}
+
+.hero{
+  background:linear-gradient(168deg,var(--navy-light) 0%,var(--navy) 55%,var(--navy-dark) 100%);
+  padding:46px 0 50px;text-align:center;
+}
+.check{
+  width:62px;height:62px;border-radius:50%;margin:0 auto 22px;
+  background:rgba(63,158,106,.16);border:2px solid var(--green);
+  display:flex;align-items:center;justify-content:center;
+  font-size:30px;color:#7fd3a4;line-height:1;
+}
+.hero h1{font-size:clamp(27px,6.5vw,38px);line-height:1.1;font-weight:800;letter-spacing:-.02em}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:15.5px;font-weight:300;color:rgba(255,255,255,.8);margin-top:16px;max-width:46ch;margin-left:auto;margin-right:auto}
+
+.band{padding:40px 0;background:var(--navy-dark)}
+.band--paper{background:var(--paper);color:var(--ink)}
+
+.steps{display:flex;flex-direction:column;gap:11px;margin-top:20px}
+.step{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.05);
+  border:1px solid rgba(197,160,89,.25);padding:15px 17px}
+.step .n{font-size:11px;font-weight:800;color:var(--gold);letter-spacing:.1em;flex:none;padding-top:3px;width:20px}
+.step h3{font-size:15px;font-weight:700;margin-bottom:3px}
+.step p{font-size:13.5px;font-weight:300;color:rgba(255,255,255,.75);line-height:1.5}
+
+.eyebrow{
+  font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;
+  color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:9px;
+}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--gold)}
+.band--paper .eyebrow{color:var(--grena)}
+.band--paper .eyebrow::before{background:var(--grena)}
+
+h2{font-size:clamp(22px,5vw,29px);line-height:1.15;font-weight:800;letter-spacing:-.015em;margin-bottom:12px}
+.band--paper h2{color:var(--navy)}
+.lead{font-size:15px;font-weight:300;color:rgba(255,255,255,.8)}
+.band--paper .lead{color:#46545f}
+
+.feats{display:grid;grid-template-columns:1fr;gap:10px;margin-top:22px}
+@media (min-width:560px){.feats{grid-template-columns:1fr 1fr}}
+.feat{background:#fff;border:1px solid rgba(10,37,64,.1);border-left:3px solid var(--grena);padding:15px 17px}
+.feat h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.feat p{font-size:13.5px;font-weight:300;color:#4a5866;line-height:1.5}
+
+.cta{
+  display:block;width:100%;text-align:center;text-decoration:none;
+  background:var(--gold);color:var(--navy-dark);
+  font-weight:800;font-size:17px;padding:17px 22px;margin-top:26px;
+  transition:transform .15s ease,background .15s ease;
+}
+.cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+.cta:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+.cta small{display:block;font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;opacity:.72;margin-top:3px}
+.cta-note{font-size:12.5px;color:#6c7883;text-align:center;margin-top:11px;font-weight:300}
+
+.help{border-left:3px solid var(--gold);background:rgba(197,160,89,.12);padding:15px 18px;margin-top:26px}
+.help h3{font-size:14.5px;font-weight:700;margin-bottom:5px}
+.help p{font-size:13.5px;font-weight:300;color:rgba(255,255,255,.8);line-height:1.55}
+.help a{color:var(--gold-light)}
+
+footer{padding:28px 0 44px;border-top:1px solid rgba(197,160,89,.25);background:var(--navy-dark)}
+footer p{font-size:12px;color:rgba(255,255,255,.4);line-height:1.7;text-align:center}
+footer b{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Procedimento <span>OAB</span></div>
+    <div class="fase">1ª Fase · Banca FGV</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="check">✓</div>
+    <h1>Compra confirmada.<br>Seu material está <span>a caminho.</span></h1>
+    <p>Enviamos tudo para o e-mail que você informou na compra. Costuma chegar em poucos minutos.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="eyebrow">O que fazer agora</div>
+    <div class="steps">
+      <div class="step">
+        <span class="n">01</span>
+        <div>
+          <h3>Abra o e-mail e baixe o material</h3>
+          <p>O link de download está lá. Se não encontrar em alguns minutos, <strong>confira a caixa de spam ou promoções</strong> — é onde costuma cair.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="n">02</span>
+        <div>
+          <h3>Guarde os arquivos em local seguro</h3>
+          <p>Seu acesso é vitalício, sem prazo de expiração. Salve no computador ou na nuvem para não depender do link.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="n">03</span>
+        <div>
+          <h3>Comece pelo simulado</h3>
+          <p>Antes de estudar qualquer coisa, resolva um simulado inteiro. Ele mostra onde você está — e é a partir dali que o estudo rende.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="eyebrow">Você também tem acesso a isto</div>
+    <h2>Além do PDF, existe<br>o aplicativo de questões.</h2>
+    <p class="lead">O Procedimento OAB tem um aplicativo que roda direto no navegador do celular. Você treina questões no padrão FGV, recebe a correção na hora e acompanha em quais matérias ainda erra mais.</p>
+
+    <div class="feats">
+      <div class="feat">
+        <h3>Correção imediata</h3>
+        <p>Respondeu, já sabe se acertou e por quê — sem precisar procurar o gabarito.</p>
+      </div>
+      <div class="feat">
+        <h3>Seu desempenho por matéria</h3>
+        <p>O app mostra onde você está perdendo pontos, para você estudar o que importa.</p>
+      </div>
+      <div class="feat">
+        <h3>No celular, sem instalar</h3>
+        <p>Abre pelo navegador. Não ocupa espaço e funciona em qualquer aparelho.</p>
+      </div>
+      <div class="feat">
+        <h3>Treino em qualquer lugar</h3>
+        <p>Dez minutos na fila do banco já valem algumas questões a mais.</p>
+      </div>
+    </div>
+
+    <a class="cta" href="https://procedimento-oab.vercel.app" target="_blank" rel="noopener">Conhecer o aplicativo<small>É só criar sua conta</small></a>
+    <p class="cta-note">O aplicativo tem planos próprios, apresentados dentro dele.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="help">
+      <h3>Não recebeu o material?</h3>
+      <p>Confira primeiro a caixa de spam e a aba de promoções. Se ainda assim não encontrar, fale com a gente pelo e-mail <a href="mailto:contato@procedimento-oab.com.br">contato@procedimento-oab.com.br</a> informando o e-mail usado na compra — resolvemos rápido.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b>Procedimento OAB</b> — A aprovação é um procedimento. Siga o método.</p>
+    <p style="margin-top:7px">Material de uso pessoal e intransferível, protegido por direito autoral.</p>
+  </div>
+</footer>
+
+</body>
+</html>
