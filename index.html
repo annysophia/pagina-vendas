@@ -106,6 +106,8 @@ strong{font-weight:700;color:#fff}
 .count span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#f0b8b4;font-weight:600}
 
 .hero-sub{font-size:16px;margin-top:16px;max-width:52ch}
+.hero-bonus{margin-top:16px;display:inline-flex;gap:9px;align-items:center;font-size:13.5px;font-weight:500;color:var(--gold-light);border:1px solid var(--line);background:rgba(197,160,89,.08);padding:10px 15px}
+.hero-bonus strong{color:#fff;font-weight:700}
 
 /* ---------- questão ao vivo (elemento-assinatura) ---------- */
 .quiz{
@@ -186,6 +188,15 @@ strong{font-weight:700;color:#fff}
   padding:11px 13px;font-size:13px;font-weight:500;color:var(--navy);
 }
 .materia em{display:block;font-style:normal;font-size:10.5px;font-weight:400;color:#7a8590;margin-top:2px}
+
+/* ---------- BÔNUS: 1 mês de Premium no app ---------- */
+.bonus{margin-top:24px;border:1px solid var(--gold);background:linear-gradient(180deg,rgba(197,160,89,.10),rgba(197,160,89,.02));padding:24px 20px}
+.bonus__badge{display:inline-block;background:var(--gold);color:var(--navy-dark);font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:6px 13px;margin-bottom:15px}
+.bonus__lead{color:#fff;font-weight:600;font-size:16px;margin-bottom:14px}
+.bonus__list{list-style:none;display:flex;flex-direction:column;gap:11px}
+.bonus__list li{display:flex;gap:11px;align-items:flex-start;font-size:15px;font-weight:300;color:rgba(255,255,255,.82)}
+.bonus__list li span.ck{color:var(--gold);font-weight:800;flex:none}
+.bonus__fine{margin-top:16px;font-size:13px;color:rgba(255,255,255,.55)}
 
 /* ---------- ancoragem ---------- */
 .anchor{margin-top:26px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
@@ -277,6 +288,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.4);line-height:1.7}
     <div class="count"><b id="dias">—</b><span>dias para a prova</span></div>
     <h1>Você passaria<br>se a prova fosse <span class="gold">hoje?</span></h1>
     <p class="hero-sub">Responda a questão abaixo. Ela é do nosso material e cobra exatamente o que a FGV cobra — inclusive a pegadinha.</p>
+    <p class="hero-bonus">🎁&nbsp;<strong>Bônus:</strong>&nbsp;quem compra o pacote ganha&nbsp;<strong>1 mês de Premium</strong>&nbsp;no app, grátis.</p>
 
     <!-- elemento-assinatura: a questão respondível -->
     <div class="quiz">
@@ -391,6 +403,28 @@ footer p{font-size:12px;color:rgba(255,255,255,.4);line-height:1.7}
   </div>
 </section>
 
+<!-- ============ BÔNUS: 1 MÊS DE PREMIUM NO APP ============ -->
+<section class="band band--deep">
+  <div class="wrap">
+    <div class="eyebrow">Bônus de quem compra o pacote</div>
+    <h2>Comprou o material?<br>Ganha <span class="gold">1 mês de Premium</span> no app.</h2>
+    <p>Além dos materiais em PDF, todo mundo que garante o Pacote Aprovação recebe <strong>30 dias de acesso Premium</strong> ao nosso aplicativo de estudos — sem pagar nada a mais.</p>
+
+    <div class="bonus">
+      <div class="bonus__badge">🎁 Bônus incluso</div>
+      <p class="bonus__lead">No Premium, você treina de verdade — direto do celular:</p>
+      <ul class="bonus__list">
+        <li><span class="ck">✓</span><span><strong>Mais de 3.700 questões</strong> no padrão FGV, liberadas sem limite.</span></li>
+        <li><span class="ck">✓</span><span><strong>Correção na hora</strong>, com o fundamento legal de cada resposta.</span></li>
+        <li><span class="ck">✓</span><span><strong>Acompanhamento do seu progresso</strong> — veja onde acerta e onde precisa reforçar.</span></li>
+        <li><span class="ck">✓</span><span>Estude <strong>quando e onde quiser</strong>, direto no navegador do celular.</span></li>
+      </ul>
+    </div>
+
+    <p class="bonus__fine">O acesso é <strong>liberado automaticamente</strong> ao entrar no app com o <strong>mesmo e-mail da compra</strong>. Sem cobrança e sem cartão — o mês grátis expira sozinho em 30 dias.</p>
+  </div>
+</section>
+
 <!-- ============ ANCORAGEM + CTA ============ -->
 <section class="band band--dark">
   <div class="wrap">
@@ -404,7 +438,8 @@ footer p{font-size:12px;color:rgba(255,255,255,.4);line-height:1.7}
       <div class="arow"><span>Mapas mentais de todas as disciplinas</span><b>R$ 19,90</b></div>
       <div class="arow"><span>500 dicas do que mais cai</span><b>R$ 19,90</b></div>
       <div class="arow"><span>Revisão de Véspera</span><b>R$ 27,00</b></div>
-      <div class="arow arow--sum"><span>Somando tudo</span><b>R$ 186,50</b></div>
+      <div class="arow"><span>1 mês de Premium no app</span><b>R$ 37,90</b></div>
+      <div class="arow arow--sum"><span>Somando tudo</span><b>R$ 224,40</b></div>
       <div class="arow arow--pack"><span>No pacote, você paga</span><b>R$ 97</b></div>
     </div>
 
@@ -481,7 +516,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.4);line-height:1.7}
     <div class="faq">
       <details>
         <summary>Como recebo o material?</summary>
-        <p>Por download, logo após a confirmação do pagamento. No Pix costuma ser em minutos; no cartão, assim que a operadora aprova. O link chega no seu e-mail e fica disponível para baixar quantas vezes precisar.</p>
+        <p>Assim que o pagamento é confirmado, você recebe um e-mail com o acesso ao nosso app. É só criar sua conta (ou entrar) com o <strong>mesmo e-mail da compra</strong> e, na aba <strong>Materiais</strong>, baixar todos os PDFs — quantas vezes precisar. No Pix costuma liberar em minutos; no cartão, assim que a operadora aprova. É no app também que fica o seu mês de Premium de bônus.</p>
       </details>
       <details>
         <summary>É PDF ou videoaula?</summary>
